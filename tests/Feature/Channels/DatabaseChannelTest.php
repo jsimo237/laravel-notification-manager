@@ -18,7 +18,7 @@ it('can send database notifications', function () {
     OrderApprovedSubscribableNotification::sendToSubscribers($approvedOrder);
 
     assertDatabaseHas('notification_managers', [
-        'notifiable_type' => get_class(Auth::user()),
+        'notifiable_type' => Auth::user()->getMorphClass(),
         'notifiable_id' => Auth::id(),
         'notification' => 'order.approved',
         'unsubscribed_at' => null,

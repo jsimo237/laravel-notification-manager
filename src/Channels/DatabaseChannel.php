@@ -31,7 +31,7 @@ class DatabaseChannel extends BaseDatabaseChannel
         }
 
         return array_merge($extraAttributes, [
-            'id' => $notification->id,
+            'id' => $notification->getKey(),
             'type' => get_class($notification),
             'data' => $this->getData($notifiable, $notification),
             'read_at' => null,

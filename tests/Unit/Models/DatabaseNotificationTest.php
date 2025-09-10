@@ -67,13 +67,13 @@ it('scope only seen notification', function () {
         ->state(new Sequence(
             [
                 'seen_at' => Carbon::now(),
-                'notifiable_id' => $user->id,
-                'notifiable_type' => get_class($user),
+                'notifiable_id' => $user->getKey(),
+                'notifiable_type' => $user->getMorphClass(),
             ],
             [
                 'seen_at' => null,
-                'notifiable_id' => $user->id,
-                'notifiable_type' => get_class($user),
+                'notifiable_id' => $user->getKey(),
+                'notifiable_type' => $user->getMorphClass(),
             ],
         ))->create();
     assertCount(5, $user->seenNotifications()->get());
@@ -86,13 +86,13 @@ it('scope only unseen notification', function () {
         ->state(new Sequence(
             [
                 'seen_at' => Carbon::now(),
-                'notifiable_id' => $user->id,
-                'notifiable_type' => get_class($user),
+                'notifiable_id' => $user->getKey(),
+                'notifiable_type' => $user->getMorphClass(),
             ],
             [
                 'seen_at' => null,
-                'notifiable_id' => $user->id,
-                'notifiable_type' => get_class($user),
+                'notifiable_id' => $user->getKey(),
+                'notifiable_type' => $user->getMorphClass(),
             ],
         ))->create();
     assertDatabaseCount('notifications', 10);

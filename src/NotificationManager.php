@@ -16,7 +16,7 @@ class NotificationManager
 
     public function __construct($notifiable = null)
     {
-        $this->notifiable = $notifiable ?? Auth::user();
+        $this->notifiable = $notifiable ?? Auth::user()->getMorphClass();
     }
 
     /**
@@ -227,8 +227,8 @@ class NotificationManager
     public function details($subscribableNotificationClass, Model $notifiable): NotificationManagerModel
     {
         return NotificationManagerModel::where([
-            'notifiable_type' => get_class($notifiable),
-            'notifiable_id' => $notifiable->id,
+            'notifiable_type' => $notifiable->getMorphClass(),
+            'notifiable_id' => $notifiable->getKey(),
             'notification' => $subscribableNotificationClass::subscribableNotificationType(),
         ])->first();
     }

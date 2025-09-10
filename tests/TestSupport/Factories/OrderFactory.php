@@ -19,7 +19,7 @@ class OrderFactory extends Factory
     {
         return [
             'name' => $this->faker->name,
-            'user_id' => User::factory()->create()->id,
+            'user_id' => User::factory()->create()$user->getKey(),
             'approved' => $this->faker->boolean,
         ];
     }

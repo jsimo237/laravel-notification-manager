@@ -23,13 +23,13 @@ it('scope only notification with preview type never', function ($state, string $
             new Sequence(
                 array_merge(
                     $state,
-                    ['notifiable_id' => Auth::id(), 'notifiable_type' => get_class(Auth::user())]
+                    ['notifiable_id' => Auth::id(), 'notifiable_type' => Auth::user()->getMorphClass()]
                 ),
-                ['notifiable_id' => Auth::id(), 'notifiable_type' => get_class(Auth::user())]
+                ['notifiable_id' => Auth::id(), 'notifiable_type' => Auth::user()->getMorphClass()]
             )
         )->create();
     assertDatabaseCount('notifications', 2);
-    assertCount($count, Auth::user()->$scope);
+    assertCount($count, Auth::user()->getMorphClass()->$scope);
 })->with([
     [['seen_at' => Carbon::now()], 'seenNotifications', 1],
     [['seen_at' => null], 'unseenNotifications', 2],

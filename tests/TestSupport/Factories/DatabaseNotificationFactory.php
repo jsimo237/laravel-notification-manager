@@ -29,7 +29,7 @@ class DatabaseNotificationFactory extends Factory
             'id' => Str::uuid(),
             'type' => $this->type,
             'notifiable_type' => "App\\Models\\User",
-            'notifiable_id' => User::factory()->create()->id,
+            'notifiable_id' => User::factory()->create()$user->getKey(),
             'data' => json_encode(Order::factory()->create()),
             'read_at' => Carbon::parse($this->faker->dateTime())->format('Y-m-d H:i:s'),
             'seen_at' => null,

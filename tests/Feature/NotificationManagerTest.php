@@ -35,7 +35,7 @@ it('can subscribe to a notification', function () {
     Notification::assertSentTo($this->loggedInUser, OrderApprovedSubscribableNotification::class);
     Notification::assertTimesSent(1, OrderApprovedSubscribableNotification::class);
     assertDatabaseHas('notification_managers', [
-        'notifiable_type' => get_class(Auth::user()),
+        'notifiable_type' => Auth::user()->getMorphClass(),
         'notifiable_id' => Auth::id(),
         'notification' => 'order.approved',
         'unsubscribed_at' => null,
@@ -48,8 +48,8 @@ it('can subscribe to a notification for a user', function () {
     Notification::assertSentTo($this->user, OrderApprovedSubscribableNotification::class);
     Notification::assertTimesSent(1, OrderApprovedSubscribableNotification::class);
     assertDatabaseHas('notification_managers', [
-        'notifiable_type' => get_class($this->user),
-        'notifiable_id' => $this->user->id,
+        'notifiable_type' => $this->user->getMorphClass(),
+        'notifiable_id' => $this->user->getKey(),
         'notification' => 'order.approved',
         'unsubscribed_at' => null,
     ]);
@@ -69,13 +69,13 @@ it('can subscribe to all notifications', function () {
     Notification::assertSentTo($this->loggedInUser, OrderRejectedSubscribableNotification::class);
     Notification::assertTimesSent(1, OrderRejectedSubscribableNotification::class);
     assertDatabaseHas('notification_managers', [
-        'notifiable_type' => get_class(Auth::user()),
+        'notifiable_type' => Auth::user()->getMorphClass(),
         'notifiable_id' => Auth::id(),
         'notification' => 'order.approved',
         'unsubscribed_at' => null,
     ]);
     assertDatabaseHas('notification_managers', [
-        'notifiable_type' => get_class(Auth::user()),
+        'notifiable_type' => Auth::user()->getMorphClass(),
         'notifiable_id' => Auth::id(),
         'notification' => 'order.rejected',
         'unsubscribed_at' => null,
@@ -97,14 +97,14 @@ it('can subscribe a user to all notifications', function () {
     Notification::assertTimesSent(1, OrderRejectedSubscribableNotification::class);
 
     assertDatabaseHas('notification_managers', [
-        'notifiable_type' => get_class($this->user),
-        'notifiable_id' => $this->user->id,
+        'notifiable_type' => $this->user->getMorphClass(),
+        'notifiable_id' => $this->user->getKey(),
         'notification' => 'order.approved',
         'unsubscribed_at' => null,
     ]);
     assertDatabaseHas('notification_managers', [
-        'notifiable_type' => get_class($this->user),
-        'notifiable_id' => $this->user->id,
+        'notifiable_type' => $this->user->getMorphClass(),
+        'notifiable_id' => $this->user->getKey(),
         'notification' => 'order.rejected',
         'unsubscribed_at' => null,
     ]);
@@ -124,7 +124,7 @@ it('can unsubscribe to a notification', function () {
     Notification::assertTimesSent(1, OrderApprovedSubscribableNotification::class);
 
     assertDatabaseHas('notification_managers', [
-        'notifiable_type' => get_class(Auth::user()),
+        'notifiable_type' => Auth::user()->getMorphClass(),
         'notifiable_id' => Auth::id(),
         'notification' => 'order.approved',
         'unsubscribed_at' => Carbon::now(),
@@ -143,8 +143,8 @@ it('can unsubscribe to a notification for a user', function () {
     Notification::assertTimesSent(1, OrderApprovedSubscribableNotification::class);
 
     assertDatabaseHas('notification_managers', [
-        'notifiable_type' => get_class($this->user),
-        'notifiable_id' => $this->user->id,
+        'notifiable_type' => $this->user->getMorphClass(),
+        'notifiable_id' => $this->user->getKey(),
         'notification' => 'order.approved',
         'unsubscribed_at' => Carbon::now(),
     ]);
@@ -164,13 +164,13 @@ it('can unsubscribe from all notifications', function () {
     Notification::assertTimesSent(0, OrderRejectedSubscribableNotification::class);
 
     assertDatabaseHas('notification_managers', [
-        'notifiable_type' => get_class(Auth::user()),
+        'notifiable_type' => Auth::user()->getMorphClass(),
         'notifiable_id' => Auth::id(),
         'notification' => 'order.approved',
         'unsubscribed_at' => Carbon::now(),
     ]);
     assertDatabaseHas('notification_managers', [
-        'notifiable_type' => get_class(Auth::user()),
+        'notifiable_type' => Auth::user()->getMorphClass(),
         'notifiable_id' => Auth::id(),
         'notification' => 'order.rejected',
         'unsubscribed_at' => Carbon::now(),
@@ -191,14 +191,14 @@ it('can unsubscribe a user from all notifications', function () {
     Notification::assertTimesSent(0, OrderRejectedSubscribableNotification::class);
 
     assertDatabaseHas('notification_managers', [
-        'notifiable_type' => get_class($this->user),
-        'notifiable_id' => $this->user->id,
+        'notifiable_type' => $this->user->getMorphClass(),
+        'notifiable_id' => $this->user->getKey(),
         'notification' => 'order.approved',
         'unsubscribed_at' => Carbon::now(),
     ]);
     assertDatabaseHas('notification_managers', [
-        'notifiable_type' => get_class($this->user),
-        'notifiable_id' => $this->user->id,
+        'notifiable_type' => $this->user->getMorphClass(),
+        'notifiable_id' => $this->user->getKey(),
         'notification' => 'order.rejected',
         'unsubscribed_at' => Carbon::now(),
     ]);
@@ -211,7 +211,7 @@ it('can prioritize a notification', function () {
     Notification::assertTimesSent(1, OrderApprovedSubscribableNotification::class);
 
     assertDatabaseHas('notification_managers', [
-        'notifiable_type' => get_class(Auth::user()),
+        'notifiable_type' => Auth::user()->getMorphClass(),
         'notifiable_id' => Auth::id(),
         'notification' => 'order.approved',
         'is_prioritized' => true,
@@ -224,8 +224,8 @@ it('can prioritize a notification for a user', function () {
     Notification::assertTimesSent(1, OrderApprovedSubscribableNotification::class);
 
     assertDatabaseHas('notification_managers', [
-        'notifiable_type' => get_class($this->user),
-        'notifiable_id' => $this->user->id,
+        'notifiable_type' => $this->user->getMorphClass(),
+        'notifiable_id' => $this->user->getKey(),
         'notification' => 'order.approved',
         'is_prioritized' => true,
     ]);
@@ -237,7 +237,7 @@ it('can trivialize a notification', function () {
     Notification::assertTimesSent(1, OrderApprovedSubscribableNotification::class);
 
     assertDatabaseHas('notification_managers', [
-        'notifiable_type' => get_class(Auth::user()),
+        'notifiable_type' => Auth::user()->getMorphClass(),
         'notifiable_id' => Auth::id(),
         'notification' => 'order.approved',
         'is_prioritized' => false,
@@ -250,8 +250,8 @@ it('can trivialize a notification for a user', function () {
     Notification::assertTimesSent(1, OrderApprovedSubscribableNotification::class);
 
     assertDatabaseHas('notification_managers', [
-        'notifiable_type' => get_class($this->user),
-        'notifiable_id' => $this->user->id,
+        'notifiable_type' => $this->user->getMorphClass(),
+        'notifiable_id' => $this->user->getKey(),
         'notification' => 'order.approved',
         'is_prioritized' => false,
     ]);
@@ -264,7 +264,7 @@ it('can mute a notification', function () {
     Notification::assertTimesSent(1, OrderApprovedSubscribableNotification::class);
 
     assertDatabaseHas('notification_managers', [
-        'notifiable_type' => get_class(Auth::user()),
+        'notifiable_type' => Auth::user()->getMorphClass(),
         'notifiable_id' => Auth::id(),
         'notification' => 'order.approved',
         'is_muted' => true,
@@ -277,8 +277,8 @@ it('can mute a notification for a user', function () {
     Notification::assertTimesSent(1, OrderApprovedSubscribableNotification::class);
 
     assertDatabaseHas('notification_managers', [
-        'notifiable_type' => get_class($this->user),
-        'notifiable_id' => $this->user->id,
+        'notifiable_type' => $this->user->getMorphClass(),
+        'notifiable_id' => $this->user->getKey(),
         'notification' => 'order.approved',
         'is_muted' => true,
     ]);
@@ -291,7 +291,7 @@ it('can unmute a notification', function () {
     Notification::assertTimesSent(1, OrderApprovedSubscribableNotification::class);
 
     assertDatabaseHas('notification_managers', [
-        'notifiable_type' => get_class(Auth::user()),
+        'notifiable_type' => Auth::user()->getMorphClass(),
         'notifiable_id' => Auth::id(),
         'notification' => 'order.approved',
         'is_muted' => false,
@@ -304,8 +304,8 @@ it('can unmute a notification for a user', function () {
     Notification::assertTimesSent(1, OrderApprovedSubscribableNotification::class);
 
     assertDatabaseHas('notification_managers', [
-        'notifiable_type' => get_class($this->user),
-        'notifiable_id' => $this->user->id,
+        'notifiable_type' => $this->user->getMorphClass(),
+        'notifiable_id' => $this->user->getKey(),
         'notification' => 'order.approved',
         'is_muted' => false,
     ]);
@@ -318,7 +318,7 @@ it('can set alert type of notification', function () {
     Notification::assertTimesSent(1, OrderApprovedSubscribableNotification::class);
 
     assertDatabaseHas('notification_managers', [
-        'notifiable_type' => get_class(Auth::user()),
+        'notifiable_type' => Auth::user()->getMorphClass(),
         'notifiable_id' => Auth::id(),
         'notification' => 'order.approved',
         'alert_type' => NotificationAlertType::BANNER->value,
@@ -331,8 +331,8 @@ it('can set alert type of notification for a user', function () {
     Notification::assertTimesSent(1, OrderApprovedSubscribableNotification::class);
 
     assertDatabaseHas('notification_managers', [
-        'notifiable_type' => get_class($this->user),
-        'notifiable_id' => $this->user->id,
+        'notifiable_type' => $this->user->getMorphClass(),
+        'notifiable_id' => $this->user->getKey(),
         'notification' => 'order.approved',
         'alert_type' => NotificationAlertType::BANNER->value,
     ]);
@@ -345,7 +345,7 @@ it('can set preview type of notification', function () {
     Notification::assertTimesSent(1, OrderApprovedSubscribableNotification::class);
 
     assertDatabaseHas('notification_managers', [
-        'notifiable_type' => get_class(Auth::user()),
+        'notifiable_type' => Auth::user()->getMorphClass(),
         'notifiable_id' => Auth::id(),
         'notification' => 'order.approved',
         'preview_type' => NotificationPreviewType::ALWAYS->value,
@@ -358,8 +358,8 @@ it('can set preview type of notification for a user', function () {
     Notification::assertTimesSent(1, OrderApprovedSubscribableNotification::class);
 
     assertDatabaseHas('notification_managers', [
-        'notifiable_type' => get_class($this->user),
-        'notifiable_id' => $this->user->id,
+        'notifiable_type' => $this->user->getMorphClass(),
+        'notifiable_id' => $this->user->getKey(),
         'notification' => 'order.approved',
         'preview_type' => NotificationPreviewType::ALWAYS->value,
     ]);
@@ -372,6 +372,6 @@ it('can not send notification to non subscribers', function () {
 
 it('can show details of a specific notification', function () {
     NotificationManager::subscribe(OrderApprovedSubscribableNotification::class);
-    $details = OrderApprovedSubscribableNotification::details(Auth::user());
+    $details = OrderApprovedSubscribableNotification::details(Auth::user()->getMorphClass());
     assertInstanceOf(NotificationManagerModel::class, $details);
 });

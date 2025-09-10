@@ -22,7 +22,7 @@ class NotificationManagerFactory extends Factory
     {
         return [
             'notification' => $this->faker->randomElement(collect(config('notification-manager.subscribable_notifications'))->keys()->all()),
-            'notifiable_id' => User::factory()->create()->id,
+            'notifiable_id' => User::factory()->create()$user->getKey(),
             'notifiable_type' => 'App/User',
             'channel' => "*",
             'preview_type' => NotificationPreviewType::WHEN_UNLOCKED->value,
