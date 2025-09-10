@@ -1,10 +1,10 @@
 <?php
 
-namespace Rubik\NotificationManager\Tests;
+namespace Kirago\NotificationManager\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Rubik\NotificationManager\NotificationManagerServiceProvider;
+use Kirago\NotificationManager\NotificationManagerServiceProvider;
 
 class TestCase extends Orchestra
 {
@@ -12,7 +12,7 @@ class TestCase extends Orchestra
     {
         parent::setUp();
         Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'Rubik\\NotificationManager\\Tests\\TestSupport\\Factories\\' . class_basename($modelName) . 'Factory'
+            fn (string $modelName) => 'Kirago\\NotificationManager\\Tests\\TestSupport\\Factories\\' . class_basename($modelName) . 'Factory'
         );
     }
 
@@ -36,8 +36,8 @@ class TestCase extends Orchestra
 
         config([
             'notification-manager.subscribable_notifications' => [
-                'order.accepted' => \Rubik\NotificationManager\Tests\TestSupport\Notifications\OrderApprovedSubscribableNotification::class,
-                'order.rejected' => \Rubik\NotificationManager\Tests\TestSupport\Notifications\OrderRejectedSubscribableNotification::class,
+                'order.accepted' => \Kirago\NotificationManager\Tests\TestSupport\Notifications\OrderApprovedSubscribableNotification::class,
+                'order.rejected' => \Kirago\NotificationManager\Tests\TestSupport\Notifications\OrderRejectedSubscribableNotification::class,
             ],
             'channels' => 'database,broadcast',
         ]);

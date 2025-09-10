@@ -1,14 +1,14 @@
 <?php
 
-namespace Rubik\NotificationManager;
+namespace Kirago\NotificationManager;
 
 use Carbon\Carbon;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
-use Rubik\NotificationManager\Enums\NotificationAlertType;
-use Rubik\NotificationManager\Enums\NotificationPreviewType;
-use Rubik\NotificationManager\Models\NotificationManager as NotificationManagerModel;
+use Kirago\NotificationManager\Enums\NotificationAlertType;
+use Kirago\NotificationManager\Enums\NotificationPreviewType;
+use Kirago\NotificationManager\Models\NotificationManager as NotificationManagerModel;
 
 class NotificationManager
 {

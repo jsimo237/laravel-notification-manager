@@ -5,8 +5,8 @@ use Illuminate\Database\Eloquent\Factories\Sequence;
 use function Pest\Laravel\assertDatabaseCount;
 use function PHPUnit\Framework\assertCount;
 use function PHPUnit\Framework\assertInstanceOf;
-use Rubik\NotificationManager\Models\NotificationManager;
-use Rubik\NotificationManager\Tests\TestSupport\Models\User;
+use Kirago\NotificationManager\Models\NotificationManager;
+use Kirago\NotificationManager\Tests\TestSupport\Models\User;
 
 it('can be morphed to a user model', function ($model) {
     $notificationManager = NotificationManager::factory()->for($model::factory(), 'notifiable')->create();

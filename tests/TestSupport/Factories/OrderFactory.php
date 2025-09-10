@@ -1,10 +1,10 @@
 <?php
 
-namespace Rubik\NotificationManager\Tests\TestSupport\Factories;
+namespace Kirago\NotificationManager\Tests\TestSupport\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Rubik\NotificationManager\Tests\TestSupport\Models\Order;
-use Rubik\NotificationManager\Tests\TestSupport\Models\User;
+use Kirago\NotificationManager\Tests\TestSupport\Models\Order;
+use Kirago\NotificationManager\Tests\TestSupport\Models\User;
 
 class OrderFactory extends Factory
 {

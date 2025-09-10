@@ -1,6 +1,6 @@
 <?php
 
-namespace Rubik\NotificationManager\Enums;
+namespace Kirago\NotificationManager\Enums;
 
 enum NotificationAlertType: string
 {

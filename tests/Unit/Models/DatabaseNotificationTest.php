@@ -6,10 +6,10 @@ use Illuminate\Database\Eloquent\Factories\Sequence;
 use function Pest\Laravel\assertDatabaseCount;
 use function PHPUnit\Framework\assertCount;
 use function PHPUnit\Framework\assertTrue;
-use Rubik\NotificationManager\Enums\NotificationAlertType;
-use Rubik\NotificationManager\Enums\NotificationPreviewType;
-use Rubik\NotificationManager\Models\DatabaseNotification;
-use Rubik\NotificationManager\Tests\TestSupport\Models\User;
+use Kirago\NotificationManager\Enums\NotificationAlertType;
+use Kirago\NotificationManager\Enums\NotificationPreviewType;
+use Kirago\NotificationManager\Models\DatabaseNotification;
+use Kirago\NotificationManager\Tests\TestSupport\Models\User;
 
 it('marks a notification as seen', function () {
     $notification = DatabaseNotification::factory()->create();

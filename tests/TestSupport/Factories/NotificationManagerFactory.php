@@ -1,13 +1,13 @@
 <?php
 
-namespace Rubik\NotificationManager\Tests\TestSupport\Factories;
+namespace Kirago\NotificationManager\Tests\TestSupport\Factories;
 
 use function collect;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Rubik\NotificationManager\Enums\NotificationAlertType;
-use Rubik\NotificationManager\Enums\NotificationPreviewType;
-use Rubik\NotificationManager\Models\NotificationManager;
-use Rubik\NotificationManager\Tests\TestSupport\Models\User;
+use Kirago\NotificationManager\Enums\NotificationAlertType;
+use Kirago\NotificationManager\Enums\NotificationPreviewType;
+use Kirago\NotificationManager\Models\NotificationManager;
+use Kirago\NotificationManager\Tests\TestSupport\Models\User;
 
 class NotificationManagerFactory extends Factory
 {

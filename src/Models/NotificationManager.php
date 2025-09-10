@@ -1,13 +1,13 @@
 <?php
 
-namespace Rubik\NotificationManager\Models;
+namespace Kirago\NotificationManager\Models;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
-use Rubik\NotificationManager\Enums\NotificationAlertType;
-use Rubik\NotificationManager\Enums\NotificationPreviewType;
+use Kirago\NotificationManager\Enums\NotificationAlertType;
+use Kirago\NotificationManager\Enums\NotificationPreviewType;
 
 class NotificationManager extends Model
 {

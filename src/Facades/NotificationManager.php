@@ -1,14 +1,14 @@
 <?php
 
-namespace Rubik\NotificationManager\Facades;
+namespace Kirago\NotificationManager\Facades;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Facade;
-use Rubik\NotificationManager\Enums\NotificationAlertType;
-use Rubik\NotificationManager\Enums\NotificationPreviewType;
+use Kirago\NotificationManager\Enums\NotificationAlertType;
+use Kirago\NotificationManager\Enums\NotificationPreviewType;
 
 /**
- * @see \Rubik\NotificationManager\NotificationManager
+ * @see \Kirago\NotificationManager\NotificationManager
  *
  * @method static subscribableNotifications(): array
  * @method static for (Model $model): void
@@ -28,6 +28,6 @@ class NotificationManager extends Facade
 {
     protected static function getFacadeAccessor(): string
     {
-        return \Rubik\NotificationManager\NotificationManager::class;
+        return \Kirago\NotificationManager\NotificationManager::class;
     }
 }

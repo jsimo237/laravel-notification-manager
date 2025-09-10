@@ -55,8 +55,8 @@ return [
     |
     | Example:
     |   'subscribable_notifications' => [
-    |       'order.accepted' => Rubik\NotificationManager\Tests\TestSupport\Notifications\OrderApprovedSubscribableNotification,
-    |       'order.rejected' => Rubik\NotificationManager\Tests\TestSupport\Notifications\OrderRejectedSubscribableNotification,
+    |       'order.accepted' => Kirago\NotificationManager\Tests\TestSupport\Notifications\OrderApprovedSubscribableNotification,
+    |       'order.rejected' => Kirago\NotificationManager\Tests\TestSupport\Notifications\OrderRejectedSubscribableNotification,
     |   ],
     */
 
@@ -86,7 +86,7 @@ return [
 
 1. Use our “Notifiable” trait in all models you wish to send notifications(most cases Users)
     - This can be done by changing the import from “use Illuminate\Notifications\Notifiable;” to “use
-      Rubik\NotificationManager\Traits\Notifiable;”, and also if not yet use the trait “use Notifiable”;. Your model
+      Kirago\NotificationManager\Traits\Notifiable;”, and also if not yet use the trait “use Notifiable”;. Your model
       should look like
 2. Use HasNotificationSubscription trait in all models you wish to send notifications
 3. Create subscribale notification by using “-s” flag in the default artisan command to create a notification.
@@ -106,8 +106,8 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
-use Rubik\NotificationManager\Contracts\SubscribableNotificationContract;
-use Rubik\NotificationManager\Traits\SubscribableNotification;
+use Kirago\NotificationManager\Contracts\SubscribableNotificationContract;
+use Kirago\NotificationManager\Traits\SubscribableNotification;
 
 class TestNotification extends Notification implements SubscribableNotificationContract
 {
@@ -174,8 +174,8 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
-use Rubik\NotificationManager\Contracts\SubscribableNotificationContract;
-use Rubik\NotificationManager\Traits\SubscribableNotification;
+use Kirago\NotificationManager\Contracts\SubscribableNotificationContract;
+use Kirago\NotificationManager\Traits\SubscribableNotification;
 
 class TestNotification extends Notification implements SubscribableNotificationContract
 {

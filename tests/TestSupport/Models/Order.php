@@ -1,6 +1,6 @@
 <?php
 
-namespace Rubik\NotificationManager\Tests\TestSupport\Models;
+namespace Kirago\NotificationManager\Tests\TestSupport\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;

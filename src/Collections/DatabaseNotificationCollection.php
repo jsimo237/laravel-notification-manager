@@ -1,6 +1,6 @@
 <?php
 
-namespace Rubik\NotificationManager\Collections;
+namespace Kirago\NotificationManager\Collections;
 
 use Illuminate\Notifications\DatabaseNotificationCollection as BaseDatabaseNotificationCollection;
 

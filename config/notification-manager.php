@@ -14,8 +14,8 @@ return [
     |
     | Example:
     |   'subscribable_notifications' => [
-    |       'order.accepted' => Rubik\NotificationManager\Tests\TestSupport\Notifications\OrderApprovedSubscribableNotification,
-    |       'order.rejected' => Rubik\NotificationManager\Tests\TestSupport\Notifications\OrderRejectedSubscribableNotification,
+    |       'order.accepted' => Kirago\NotificationManager\Tests\TestSupport\Notifications\OrderApprovedSubscribableNotification,
+    |       'order.rejected' => Kirago\NotificationManager\Tests\TestSupport\Notifications\OrderRejectedSubscribableNotification,
     |   ],
     */
 

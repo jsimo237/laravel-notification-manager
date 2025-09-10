@@ -3,10 +3,10 @@
 use Illuminate\Support\Facades\Auth;
 use function Pest\Laravel\actingAs;
 use function Pest\Laravel\assertDatabaseHas;
-use Rubik\NotificationManager\Facades\NotificationManager;
-use Rubik\NotificationManager\Tests\TestSupport\Models\Order;
-use Rubik\NotificationManager\Tests\TestSupport\Models\User;
-use Rubik\NotificationManager\Tests\TestSupport\Notifications\OrderApprovedSubscribableNotification;
+use Kirago\NotificationManager\Facades\NotificationManager;
+use Kirago\NotificationManager\Tests\TestSupport\Models\Order;
+use Kirago\NotificationManager\Tests\TestSupport\Models\User;
+use Kirago\NotificationManager\Tests\TestSupport\Notifications\OrderApprovedSubscribableNotification;
 
 it('can send database notifications', function () {
     $loggedInUser = User::factory()->create();

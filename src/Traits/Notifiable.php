@@ -1,11 +1,11 @@
 <?php
 
-namespace Rubik\NotificationManager\Traits;
+namespace Kirago\NotificationManager\Traits;
 
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Query\Builder;
 use Illuminate\Notifications\Notifiable as BaseNotifiable;
-use Rubik\NotificationManager\Models\DatabaseNotification;
+use Kirago\NotificationManager\Models\DatabaseNotification;
 
 trait Notifiable
 {

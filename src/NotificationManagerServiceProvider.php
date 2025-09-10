@@ -1,12 +1,12 @@
 <?php
 
-namespace Rubik\NotificationManager;
+namespace Kirago\NotificationManager;
 
 use Illuminate\Notifications\Channels\DatabaseChannel as BaseDatabaseChannel;
 use Illuminate\Notifications\DatabaseNotification as BaseDatabaseNotification;
-use Rubik\NotificationManager\Channels\DatabaseChannel;
-use Rubik\NotificationManager\Commands\NotificationManagerCommand;
-use Rubik\NotificationManager\Models\DatabaseNotification;
+use Kirago\NotificationManager\Channels\DatabaseChannel;
+use Kirago\NotificationManager\Commands\NotificationManagerCommand;
+use Kirago\NotificationManager\Models\DatabaseNotification;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 

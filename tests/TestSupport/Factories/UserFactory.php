@@ -1,12 +1,12 @@
 <?php
 
-namespace Rubik\NotificationManager\Tests\TestSupport\Factories;
+namespace Kirago\NotificationManager\Tests\TestSupport\Factories;
 
 use function bcrypt;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 use function now;
-use Rubik\NotificationManager\Tests\TestSupport\Models\User;
+use Kirago\NotificationManager\Tests\TestSupport\Models\User;
 
 class UserFactory extends Factory
 {

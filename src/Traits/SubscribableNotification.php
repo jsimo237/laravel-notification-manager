@@ -1,16 +1,16 @@
 <?php
 
-namespace Rubik\NotificationManager\Traits;
+namespace Kirago\NotificationManager\Traits;
 
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Notification;
-use Rubik\NotificationManager\Enums\NotificationAlertType;
-use Rubik\NotificationManager\Enums\NotificationPreviewType;
-use Rubik\NotificationManager\Facades\NotificationManager as NotificationManagerFacade;
-use Rubik\NotificationManager\Models\NotificationManager;
-use Rubik\NotificationManager\Models\NotificationManager as NotificationManagerModel;
+use Kirago\NotificationManager\Enums\NotificationAlertType;
+use Kirago\NotificationManager\Enums\NotificationPreviewType;
+use Kirago\NotificationManager\Facades\NotificationManager as NotificationManagerFacade;
+use Kirago\NotificationManager\Models\NotificationManager;
+use Kirago\NotificationManager\Models\NotificationManager as NotificationManagerModel;
 
 trait SubscribableNotification
 {

@@ -5,12 +5,12 @@ use Illuminate\Support\Facades\Notification;
 use function Pest\Laravel\actingAs;
 use function Pest\Laravel\assertDatabaseHas;
 use function PHPUnit\Framework\assertCount;
-use Rubik\NotificationManager\Enums\NotificationAlertType;
-use Rubik\NotificationManager\Enums\NotificationPreviewType;
-use Rubik\NotificationManager\Facades\NotificationManager;
-use Rubik\NotificationManager\Tests\TestSupport\Models\Order;
-use Rubik\NotificationManager\Tests\TestSupport\Models\User;
-use Rubik\NotificationManager\Tests\TestSupport\Notifications\OrderApprovedSubscribableNotification;
+use Kirago\NotificationManager\Enums\NotificationAlertType;
+use Kirago\NotificationManager\Enums\NotificationPreviewType;
+use Kirago\NotificationManager\Facades\NotificationManager;
+use Kirago\NotificationManager\Tests\TestSupport\Models\Order;
+use Kirago\NotificationManager\Tests\TestSupport\Models\User;
+use Kirago\NotificationManager\Tests\TestSupport\Notifications\OrderApprovedSubscribableNotification;
 
 beforeEach(function () {
     $this->loggedInUser = User::factory()->create();

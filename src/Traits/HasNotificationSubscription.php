@@ -1,9 +1,9 @@
 <?php
 
-namespace Rubik\NotificationManager\Traits;
+namespace Kirago\NotificationManager\Traits;
 
 use Illuminate\Database\Eloquent\Relations\MorphMany;
-use Rubik\NotificationManager\Models\NotificationManager;
+use Kirago\NotificationManager\Models\NotificationManager;
 
 trait HasNotificationSubscription
 {

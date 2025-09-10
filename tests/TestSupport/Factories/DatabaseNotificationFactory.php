@@ -1,15 +1,15 @@
 <?php
 
-namespace Rubik\NotificationManager\Tests\TestSupport\Factories;
+namespace Kirago\NotificationManager\Tests\TestSupport\Factories;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
-use Rubik\NotificationManager\Enums\NotificationAlertType;
-use Rubik\NotificationManager\Enums\NotificationPreviewType;
-use Rubik\NotificationManager\Models\DatabaseNotification;
-use Rubik\NotificationManager\Tests\TestSupport\Models\Order;
-use Rubik\NotificationManager\Tests\TestSupport\Models\User;
+use Kirago\NotificationManager\Enums\NotificationAlertType;
+use Kirago\NotificationManager\Enums\NotificationPreviewType;
+use Kirago\NotificationManager\Models\DatabaseNotification;
+use Kirago\NotificationManager\Tests\TestSupport\Models\Order;
+use Kirago\NotificationManager\Tests\TestSupport\Models\User;
 
 class DatabaseNotificationFactory extends Factory
 {
@@ -18,7 +18,7 @@ class DatabaseNotificationFactory extends Factory
     /**
      * Default type value
      */
-    private string $type = "Rubik\\NotificationManager\\Tests\\TestSupport\\Notifications\\OrderApprovedNotification.php";
+    private string $type = "Kirago\\NotificationManager\\Tests\\TestSupport\\Notifications\\OrderApprovedNotification.php";
 
     /**
      * Define the model's default state.

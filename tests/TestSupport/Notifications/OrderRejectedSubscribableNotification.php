@@ -1,11 +1,11 @@
 <?php
 
-namespace Rubik\NotificationManager\Tests\TestSupport\Notifications;
+namespace Kirago\NotificationManager\Tests\TestSupport\Notifications;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notification;
-use Rubik\NotificationManager\Contracts\SubscribableNotificationContract;
-use Rubik\NotificationManager\Traits\SubscribableNotification;
+use Kirago\NotificationManager\Contracts\SubscribableNotificationContract;
+use Kirago\NotificationManager\Traits\SubscribableNotification;
 
 class OrderRejectedSubscribableNotification extends Notification implements SubscribableNotificationContract
 {

@@ -1,13 +1,13 @@
 <?php
 
-namespace Rubik\NotificationManager\Models;
+namespace Kirago\NotificationManager\Models;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Notifications\DatabaseNotification as BaseDatabaseNotification;
-use Rubik\NotificationManager\Collections\DatabaseNotificationCollection;
-use Rubik\NotificationManager\Enums\NotificationAlertType;
-use Rubik\NotificationManager\Enums\NotificationPreviewType;
+use Kirago\NotificationManager\Collections\DatabaseNotificationCollection;
+use Kirago\NotificationManager\Enums\NotificationAlertType;
+use Kirago\NotificationManager\Enums\NotificationPreviewType;
 
 class DatabaseNotification extends BaseDatabaseNotification
 {

@@ -1,29 +1,25 @@
 {
-    "name": "rubik-llc/laravel-notification-manager",
+    "name": "kirago/laravel-notification-manager",
     "description": "Manage notifications easily in your Laravel app.",
     "keywords": [
         "rubik-llc",
         "laravel",
         "laravel-notification-manager"
     ],
-    "homepage": "https://github.com/rubik-llc/laravel-notification-manager",
+    "homepage": "https://github.com/jsimo237/laravel-notification-manager",
     "license": "MIT",
     "authors": [
         {
-            "name": "Yllndrit Beka",
-            "email": "yllndritb@gmail.com",
-            "role": "Developer"
-        },
-        {
-            "name": "Rron Nela",
-            "email": "rroni.dev@gmail.com",
-            "role": "Developer"
+            "name": "Simo Joel",
+            "email": "joelsimooverride@gmail.com",
+            "role": "Developer",
+            "homepage": "https://github.com/jsimo237"
         }
     ],
     "require": {
-        "php": "^8.1",
+        "php": "^^8.2",
         "spatie/laravel-package-tools": "^1.9.2",
-        "illuminate/contracts": "^9.0"
+        "illuminate/contracts": "^11.0|^12.0"
     },
     "require-dev": {
         "nunomaduro/collision": "^6.0",
@@ -40,13 +36,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Rubik\\NotificationManager\\": "src",
-            "Rubik\\NotificationManager\\Database\\Factories\\": "database/factories"
+            "Kirago\\NotificationManager\\": "src",
+            "Kirago\\NotificationManager\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Rubik\\NotificationManager\\Tests\\": "tests"
+            "Kirago\\NotificationManager\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -64,10 +60,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Rubik\\NotificationManager\\NotificationManagerServiceProvider"
+                "Kirago\\NotificationManager\\NotificationManagerServiceProvider"
             ],
             "aliases": {
-                "NotificationManager": "Rubik\\NotificationManager\\Facades\\NotificationManager"
+                "NotificationManager": "Kirago\\NotificationManager\\Facades\\NotificationManager"
             }
         }
     },

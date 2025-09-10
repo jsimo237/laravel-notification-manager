@@ -1,6 +1,6 @@
 <?php
 
-namespace Rubik\NotificationManager\Contracts;
+namespace Kirago\NotificationManager\Contracts;
 
 use Illuminate\Support\Collection;
 

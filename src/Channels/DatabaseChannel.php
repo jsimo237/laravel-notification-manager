@@ -1,6 +1,6 @@
 <?php
 
-namespace Rubik\NotificationManager\Channels;
+namespace Kirago\NotificationManager\Channels;
 
 use Illuminate\Notifications\Channels\DatabaseChannel as BaseDatabaseChannel;
 use Illuminate\Notifications\Notification;

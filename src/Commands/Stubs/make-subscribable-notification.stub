@@ -6,8 +6,8 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
-use Rubik\NotificationManager\Contracts\SubscribableNotificationContract;
-use Rubik\NotificationManager\Traits\SubscribableNotification;
+use Kirago\NotificationManager\Contracts\SubscribableNotificationContract;
+use Kirago\NotificationManager\Traits\SubscribableNotification;
 
 class {{ class }} extends Notification implements SubscribableNotificationContract
 {

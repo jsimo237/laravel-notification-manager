@@ -1,6 +1,6 @@
 <?php
 
-namespace Rubik\NotificationManager\Commands;
+namespace Kirago\NotificationManager\Commands;
 
 use Illuminate\Foundation\Console\NotificationMakeCommand;
 use Symfony\Component\Console\Input\InputOption;
