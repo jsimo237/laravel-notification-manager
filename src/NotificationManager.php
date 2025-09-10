@@ -39,7 +39,7 @@ class NotificationManager
     {
         NotificationManagerModel::updateOrCreate([
             'notification' => $subscribableNotificationClass::subscribableNotificationType(),
-            'notifiable_type' => $this->notifiable->getMorpClass(),
+            'notifiable_type' => $this->notifiable->getMorphClass(),
             'notifiable_id' => $this->notifiable->getKey(),
         ], [
             'channel' => $channel,
