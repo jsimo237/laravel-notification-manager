@@ -39,8 +39,8 @@ class NotificationManager
     {
         NotificationManagerModel::updateOrCreate([
             'notification' => $subscribableNotificationClass::subscribableNotificationType(),
-            'notifiable_type' => get_class($this->notifiable),
-            'notifiable_id' => $this->notifiable->id,
+            'notifiable_type' => $this->notifiable->getMorpClass(),
+            'notifiable_id' => $this->notifiable->getKey(),
         ], [
             'channel' => $channel,
             'unsubscribed_at' => null,
@@ -57,8 +57,8 @@ class NotificationManager
     {
         NotificationManagerModel::updateOrCreate([
             'notification' => $subscribableNotificationClass::subscribableNotificationType(),
-            'notifiable_type' => get_class($this->notifiable),
-            'notifiable_id' => $this->notifiable->id,
+            'notifiable_type' => $this->notifiable->getMorphClass(),
+            'notifiable_id' => $this->notifiable->getKey(),
         ], [
             'channel' => $channel,
             'unsubscribed_at' => Carbon::now(),
@@ -76,8 +76,8 @@ class NotificationManager
 
         NotificationManagerModel::query()
             ->where([
-                'notifiable_type' => get_class($this->notifiable),
-                'notifiable_id' => $this->notifiable->id,
+                'notifiable_type' => $this->notifiable->getMorphClass(),
+                'notifiable_id' => $this->notifiable->getKey(),
                 'notification' => $subscribableNotificationClass::subscribableNotificationType(),
             ])->update([
                 'is_prioritized' => true,
@@ -95,8 +95,8 @@ class NotificationManager
 
         NotificationManagerModel::query()
             ->where([
-                'notifiable_type' => get_class($this->notifiable),
-                'notifiable_id' => $this->notifiable->id,
+                'notifiable_type' => $this->notifiable->getMorphClass(),
+                'notifiable_id' => $this->notifiable->getKey(),
                 'notification' => $subscribableNotificationClass::subscribableNotificationType(),
             ])->update([
                 'is_prioritized' => false,
@@ -114,8 +114,8 @@ class NotificationManager
 
         NotificationManagerModel::query()
             ->where([
-                'notifiable_type' => get_class($this->notifiable),
-                'notifiable_id' => $this->notifiable->id,
+                'notifiable_type' => $this->notifiable->getMorphClass(),
+                'notifiable_id' => $this->notifiable->getKey(),
                 'notification' => $subscribableNotificationClass::subscribableNotificationType(),
             ])->update([
                 'is_muted' => true,
@@ -133,8 +133,8 @@ class NotificationManager
 
         NotificationManagerModel::query()
             ->where([
-                'notifiable_type' => get_class($this->notifiable),
-                'notifiable_id' => $this->notifiable->id,
+                'notifiable_type' => $this->notifiable->getMorphClass(),
+                'notifiable_id' => $this->notifiable->getKey(),
                 'notification' => $subscribableNotificationClass::subscribableNotificationType(),
             ])->update([
                 'is_muted' => false,
@@ -150,8 +150,8 @@ class NotificationManager
     {
         NotificationManagerModel::query()
             ->where([
-                'notifiable_type' => get_class($this->notifiable),
-                'notifiable_id' => $this->notifiable->id,
+                'notifiable_type' => $this->notifiable->getMorphClass(),
+                'notifiable_id' => $this->notifiable->getKey(),
             ])
             ->update([
                 'unsubscribed_at' => null,
@@ -168,8 +168,8 @@ class NotificationManager
     {
         NotificationManagerModel::query()
             ->where([
-                'notifiable_type' => get_class($this->notifiable),
-                'notifiable_id' => $this->notifiable->id,
+                'notifiable_type' => $this->notifiable->getMorphClass(),
+                'notifiable_id' => $this->notifiable->getKey(),
             ])
             ->update([
                 'unsubscribed_at' => Carbon::now(),
@@ -189,8 +189,8 @@ class NotificationManager
 
         NotificationManagerModel::query()
             ->where([
-                'notifiable_type' => get_class($this->notifiable),
-                'notifiable_id' => $this->notifiable->id,
+                'notifiable_type' => $this->notifiable->getMorphClass(),
+                'notifiable_id' => $this->notifiable->getKey(),
                 'notification' => $subscribableNotificationClass::subscribableNotificationType(),
             ])->update([
                 'alert_type' => $notificationAlertType->value,
@@ -209,8 +209,8 @@ class NotificationManager
 
         NotificationManagerModel::query()
             ->where([
-                'notifiable_type' => get_class($this->notifiable),
-                'notifiable_id' => $this->notifiable->id,
+                'notifiable_type' => $this->notifiable->getMorphClass(),
+                'notifiable_id' => $this->notifiable->getKey(),
                 'notification' => $subscribableNotificationClass::subscribableNotificationType(),
             ])->update([
                 'preview_type' => $notificationPreviewType->value,
