@@ -24,7 +24,7 @@ In addition to Laravel’s default notifications, this package adds further attr
 You can install the package via composer:
 
 ```bash
-composer require rubik-llc/laravel-notification-manager
+composer require kirago/laravel-notification-manager
 ```
 
 You can publish and run the migrations with:
